@@ -5,15 +5,15 @@ const ContactForm = ({ }) => {
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
 
-    const onSubmit = () => {
-        e.preventDefault()
+    const onSubmit = async (e) => {
+        e.preventDefault();
 
         const data = {
             firstName,
             lastName,
             email
         }
-        const url = "https://127.0.0.1:5000/cdreate_contact"
+        const url = "http://127.0.0.1:5000/cdreate_contact"
         const options = {
             method: "Post",
             headers: {
@@ -25,6 +25,8 @@ const ContactForm = ({ }) => {
         if (response.status !== 201 && response.status !== 200) {
             const message = await response.json()
             alert(message.message)
+        } else {
+            // successul 
         }
     }
 
