@@ -5,6 +5,7 @@ import './App.css'
 
 function App() {
   const [contacts, setContacts] = useState([])
+  
 
   useEffect(() => {
     fetchContacts()
